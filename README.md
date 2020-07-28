@@ -1,4 +1,4 @@
-###### dopStats.sh
+## dopStats.sh
 This script will request,parse,and output doppler throughput and drops per instance in a table on the screen. (tip: use watch for it to update in real time.)
 It needs be edited with the api endpoint. Optionally, you can use an admin user or create a temporary user for the script. 
 It also uses the [log-cache cli](https://github.com/cloudfoundry/log-cache-cli).
