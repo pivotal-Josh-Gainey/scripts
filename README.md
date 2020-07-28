@@ -1,8 +1,8 @@
 # scripts
 General place for scripts
 
-
-For the doppler stats script, it by default uses a created user that can bypass log-cache permissions checks for fast cf queries. It also uses the log-cache cli.
+<h2>dopStats<h2>
+By default uses a created user that can bypass log-cache permissions checks for fast cf queries. It also uses the log-cache cli.
 For log-cache cli: https://github.com/cloudfoundry/log-cache-cli
 To create the user - use uaac cli:
 uaac target uaa.<systemFQDN>
