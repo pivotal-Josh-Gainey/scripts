@@ -1,17 +1,5 @@
 ## dopStats.sh
 This script will request,parse,and output doppler throughput and drops per instance in a table on the screen. (tip: use watch for it to update in real time.)
-It needs be edited with the api endpoint. Optionally, you can use an admin user or create a temporary user for the script. 
-It also uses the [log-cache cli](https://github.com/cloudfoundry/log-cache-cli).
-This is how to set up the dopStats user.
-```java
-uaac target uaa.<systemFQDN>
-uaac token client get admin -s <admin-client-secret>
-uaac user add dopStats \
-    --password dopStats \
-    --emails dopStats@dopStats.com \
-    && uaac member add doppler.firehose dopStats
-```
-This is how to delete the dopStats user.
-```java
-uaac user delete dopStats
-```
+It requires the [log-cache cli](https://github.com/cloudfoundry/log-cache-cli).
+Just be sure your cf cli is authenticated and you have the proper scopes. (Note - if you have doppler.firehose or logs.admin scope - it will skip the log-cache permission check leading to faster and more efficient running of the script.)
+
