@@ -30,3 +30,8 @@ display(){
         printf "%40s %15.0f %15.0f %15.0f %15.0f %15.0F\n" $dopindex "$INGRESS" "$INDROP" "$EGRESS" "$EDROP" "$SUBS"
     done
 }
+
+
+login
+initVars
+display
