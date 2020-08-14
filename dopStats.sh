@@ -1,9 +1,5 @@
 #!/bin/bash
 
-login(){
-    cf login -a api.system.joshbot.pas -u dopStats -p dopStats -o system -s system --skip-ssl-validation > /dev/null
-}
-
 initVars(){
     export DOPINFO_INDEXES_UNSORTED=`cf query "ingress{source_id='doppler'}" |  jq -r '.data.result[] | .metric.index'`
     export DOPINFO_INDEXES=`echo "$DOPINFO_INDEXES_UNSORTED" | tr ' ' '\n' | sort | tr '\n' ' '`
@@ -31,7 +27,5 @@ display(){
     done
 }
 
-
-login
 initVars
 display
