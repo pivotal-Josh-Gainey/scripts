@@ -10,9 +10,9 @@ echo "Doppler ingress sum: $SUM_DOPPLER_INGRESS"
 
 # read all CounterNozzle counters
 export CURRENT_COUNTERNOZZLE_TOTAL=0
-for i in {0..9}
+for j in {0..9}
 do
-INSTANCE_TOTAL=`curl -s counternozzle-sleepy-chipmunk.apps.joshbot.pas/read -H "X-Cf-App-Instance":"afa78ee5-b952-4d7d-a553-fc48fe470245:$i"`
+INSTANCE_TOTAL=`curl -s counternozzle-sleepy-chipmunk.apps.joshbot.pas/read -H "X-Cf-App-Instance":"afa78ee5-b952-4d7d-a553-fc48fe470245:$j"`
 CURRENT_COUNTERNOZZLE_TOTAL=`echo "${INSTANCE_TOTAL} + $CURRENT_COUNTERNOZZLE_TOTAL" | bc`
 done
 echo "CounterNozzle ingress sum: $CURRENT_COUNTERNOZZLE_TOTAL"
