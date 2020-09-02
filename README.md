@@ -6,13 +6,17 @@ Just be sure your cf cli is authenticated and you have the proper scopes. (Note 
 
 
 ### For readAllCounters and resetAllCounters
-```bash
+
 // to reset all counters in the nozzles.
+```bash
 for i in {0..<NUMBER INSTANCES OF COUNTERNOZZLE - 1>}
 do
 curl <COUNTERNOZZLE.APPS-DOMAIN>/reset -H "X-Cf-App-Instance":"<CounterNozzle GUID>:$i"
 done
+```
+
 //To sum all counternozzle counters
+```bash
 export CURRENT_COUNTERNOZZLE_TOTAL=0
 for i in {0..<NUMBER INSTANCES OF COUNTERNOZZLE - 1>}
 do
